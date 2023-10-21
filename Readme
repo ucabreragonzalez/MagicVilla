@@ -1,4 +1,5 @@
 https://www.youtube.com/watch?v=_uZYOgzYheU
+last: 1:43:00
 
 mkdir MagicVilla && cd MagicVilla
 dotnet new sln -n MagicVilla
@@ -7,4 +8,7 @@ dotnet sln MagicVilla.sln add MagicVilla_VillaAPI/MagicVilla_VillaAPI.csproj
 
 cd MagicVilla_VillaAPI
 dotnet add package Microsoft.AspNetCore.JsonPatch
-dotnet add package Microsoft.AspNetCore.JsonPatch
+dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
+
+cd MagicVilla_VillaAPI
+dotnet add package Serilog.AspNetCore
