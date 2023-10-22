@@ -24,11 +24,11 @@ dotnet add package Microsoft.EntityFrameworkCore.Design
 
 now instead using:
 ```
-Add-Migration MyDemoMigration
+Add-Migration AddVillaTable
 ```
 
 we can run:
 ```
-dotnet ef migrations add MyDemoMigration
-dotnet ef migrations remove MyDemoMigration
+dotnet ef migrations add AddVillaTable
+dotnet ef migrations remove AddVillaTable
 ```
