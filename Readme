@@ -1,5 +1,8 @@
 https://www.youtube.com/watch?v=_uZYOgzYheU
-last: 1:43:00
+last: 2:20:00
+
+depency injection:
+https://www.youtube.com/watch?v=KMErAbXRQdg
 
 mkdir MagicVilla && cd MagicVilla
 dotnet new sln -n MagicVilla
@@ -22,6 +25,7 @@ cd MagicVilla_VillaAPI
 dotnet tool install --global dotnet-ef
 dotnet add package Microsoft.EntityFrameworkCore.Design
 
+https://www.infoworld.com/article/3691114/how-to-work-with-ef-core-migrations-in-aspnet-core.html
 now instead using:
 ```
 Add-Migration AddVillaTable
@@ -31,4 +35,14 @@ we can run:
 ```
 dotnet ef migrations add AddVillaTable
 dotnet ef migrations remove AddVillaTable
+
+dotnet ef database update
 ```
+
+
+
+Some errors:
+microsoft.extensions.configuration.configurationextensions.getconnectionstring(...) returned null
+This is coz db connection string returns null.
+Solution: from(https://stackoverflow.com/questions/39628411/configuration-getconnectionstring-returns-null-when-running-asp-net-core-on-vs-c)
+launch.json -> "cwd": "${workspaceFolder}/MagicVilla_VillaAPI",
