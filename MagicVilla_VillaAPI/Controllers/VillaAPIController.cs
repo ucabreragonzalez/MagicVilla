@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using MagicVilla_VillaAPI.Data;
+using MagicVilla_VillaAPI.Logging;
 using MagicVilla_VillaAPI.Models;
 using MagicVilla_VillaAPI.Models.Dto;
 using Microsoft.AspNetCore.JsonPatch;
@@ -12,17 +13,16 @@ namespace MagicVilla_VillaAPI.Controllers;
 [ApiController]
 public class VillaAPIController : ControllerBase
 {
-    private readonly ILogger<VillaAPIController> _logger;
-
-    public VillaAPIController(ILogger<VillaAPIController> logger)
+    private readonly ILogging _logger;
+    public VillaAPIController(ILogging loger)
     {
-        _logger = logger;
+        _logger = loger;
     }
 
     [HttpGet]
     public ActionResult<IEnumerable<VillaDto>> GetVillas()
     {
-        _logger.LogInformation("Getting all Villas");
+        _logger.Log("Getting all Villas");
         return Ok(VillaStore.villaList);
     }
 
