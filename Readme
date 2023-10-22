@@ -12,3 +12,23 @@ dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson
 
 cd MagicVilla_VillaAPI
 dotnet add package Serilog.AspNetCore
+
+cd MagicVilla_VillaAPI
+dotnet add package MySql.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+
+cd MagicVilla_VillaAPI
+dotnet tool install --global dotnet-ef
+dotnet add package Microsoft.EntityFrameworkCore.Design
+
+now instead using:
+```
+Add-Migration MyDemoMigration
+```
+
+we can run:
+```
+dotnet ef migrations add MyDemoMigration
+dotnet ef migrations remove MyDemoMigration
+```
